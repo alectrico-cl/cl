@@ -41,7 +41,7 @@
     },
     "path": "@PROJECT_PATH@",
     "screenshot": "screenshot.png",
-    "favicon": false,
+    "favicon": "",
     "noImageResize": "true",
     "google-analytics": "<script src=\"//cdn.jsdelivr.net/g/es6-promise@1.0.0\"></script>\r\n<script src=\"//cdnjs.cloudflare.com/ajax/libs/jsonld/0.4.12/jsonld.min.js\"></script>\r\n\r\n<!-- Global site tag (gtag.js) - Google Analytics -->\r\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-86536511-2\"></script>\r\n<script>\r\n  window.dataLayer = window.dataLayer || [];\r\n  function gtag(){dataLayer.push(arguments);}\r\n  gtag('js', new Date());\r\n\r\n  gtag('config', 'UA-86536511-2');\r\n</script>\r\n\r\n\r\n\r\n<!-- Global site tag (gtag.js) - Google AdWords: 1014456966 -->\r\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=AW-1014456966\"></script>\r\n<script>\r\n  window.dataLayer = window.dataLayer || [];\r\n  function gtag(){dataLayer.push(arguments);}\r\n  gtag('js', new Date());\r\n\r\n  gtag('config', 'AW-1014456966');\r\n</script>\r\n\r\n\r\n",
     "cookiesAlert": {
@@ -93,8 +93,7 @@
     "imageResize": true,
     "publishType": "github",
     "gitHubName": "alectrico-pro",
-    "gitHubPath": "alectrico",
-    "gdpr": false
+    "gitHubPath": "alectrico"
   },
   "pages": {
     "ingenieria.html": {

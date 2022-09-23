@@ -1,7 +1,7 @@
 {
     "title": "Electricista a Domicilio: Providencia.",
     "name": "Sitio CL Temuco Landing",
-    "version": "6.0.0",
+    "version": "3.0.0",
     "scripts": {
         "start": " node scripts/start.js"
     },

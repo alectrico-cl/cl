@@ -8,6 +8,16 @@ fetch('https://www.alectrico.cl/listas/designer/cargas.json')
   })
   .catch( function (err) {
      console.log(err);
+     fetch('http://localhost:5000/servicios.json')
+	  .then( function (response) {
+	     return response.json();
+          })
+	  .then( function (data) {
+	     console.log(data);
+	  })
+	  .catch( function (err) {
+	     console.log( err );
+	  });
   });
 
 

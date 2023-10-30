@@ -4,24 +4,34 @@ fetch('https://www.alectrico.cl/listas/designer/fonos.json')
   })
   .then( function (data){
      console.log( data );
-     appendData(data);
+     replaceFonos(data);
   })
   .catch( function (err) {
      console.log(err);
-     fetch('http://localhost:5000/servicios.json')
-          .then( function (response) {
-             return response.json();
-          })
-          .then( function (data) {
-             console.log(data);
-          })
-          .catch( function (err) {
-             console.log( err );
-          });
   });
 
+function replaceFonos(data) {
+  //data es un json de llave servicios con llavez publico Y numero
+  //Está definido como una función llamada fonos
+  //en cloud de google
+  //no usar el signo + en la escritura del número telefónico
+  const whatsapp = document.getElementById("boton-whatsapp");
+  whatsapp.href=`https://api.whatsapp.com/send?phone=${data.fonos.cliente.numero}&text=Hola alec, necesito resolver un problema eléctrico en Providencia`
+  //whatsapp.href=`https://wa.me/${data.fonos[1].numero}`;
+  //whatsapp.href=`tel: ${data.servicios[0].numero}`;
+  whatsapp.innerHTML= data.fonos.cliente.html;
 
+  const llameAhora = document.getElementById("llame-ahora");
+  //llameAhora.href=`https://wa.me/${data.fonos.colaborador.numero}`;
+  llameAhora.href=`https://api.whatsapp.com/send?phone=${data.fonos.colaborador.numero}&text=Hola alec, necesito resolver un problema eléctrico en Providencia`
+  //nst span = llameAhora.createElement("span");
+  //an.class = "socicon socicon-whatsapp mbr-iconfont mbr-iconfont-btn"
+  //an.innerHTML = "span" ;
+  //llameAhora.innerHTML= data.fonos.colaborador.html;
+  //"<span class="socicon socicon-whatsapp mbr-iconfont mbr-iconfont-btn"></span>LLAME AHORA<br>932-000-849<br></a></div>
 
+}
+       
 
 fetch('https://www.alectrico.cl/listas/designer/cargas.json')
   .then( function (response) {
@@ -33,7 +43,7 @@ fetch('https://www.alectrico.cl/listas/designer/cargas.json')
   })
   .catch( function (err) {
      console.log(err);
-     fetch('http://localhost:5000/servicios.json')
+     fetch('http://localhost/servicios.json')
 	  .then( function (response) {
 	     return response.json();
           })
@@ -73,4 +83,3 @@ function appendData(data) {
     myData.appendChild(tr);
   }
 }
-
